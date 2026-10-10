@@ -53,13 +53,12 @@ $$I^{\text{filtered}}(p) = \frac{1}{W_p} \sum_{q \in \Omega} I(q) \cdot \exp\lef
 
 ### 2.6. Hiệu ứng Tranh vẽ (Color Dodge Sketch & Blending)
 Áp dụng công thức hòa trộn Color Dodge:
-$$\text{Sketch}(x, y) = \min\left(\frac{I(x, y) \times 255}{255 - I_{\text{blur\_inv}}(x, y) + \epsilon}, 255\right)$$
+$$\text{Sketch}(x, y) = \min\left(\frac{I(x, y) \times 255}{255 - I_{\text{blur}}(x, y) + \epsilon}, 255\right)$$
 Hỗ trợ đa dạng phong cách:
-1. **Tranh chì kinh điển (Color Dodge)**: Nét mờ nghệ thuật.
-2. **Tranh chì viền đậm (Edge-Enhanced)**: Hòa trộn trực tiếp với bản đồ biên Sobel.
-3. **Tranh chì bảo toàn biên (Bilateral Sketch)**: Đường nét phẳng và ranh giới rõ rệt.
-4. **Tranh chì màu (Color Pencil)**: Giữ thông tin màu sắc gốc hòa trộn với lớp bóng chì xám.
-5. **Bản vẽ nét kỹ thuật (Technical Contour)**: Trích xuất đường viền cấu trúc sắc nét trên nền giấy trắng.
+1. **Tranh chì đen trắng**
+2. **Tranh chì màu**
+3. **Tranh chì bảo toàn biên**
+4. **Bản vẽ nét kỹ thuật**
 
 ---
 
@@ -84,3 +83,29 @@ python main.py
 ```bash
 python main.py --cli
 ```
+
+
+Sau khi chạy phần mềm, chúng ta có thể nhận được kết quả sau:
+<table>
+  <tr>
+    <th>Ảnh gốc</th>
+    <th>Tranh chì đen trắng</th>
+    <th>Tranh chì màu</th>
+    <th>Tranh chì bảo toàn biên</th>
+    
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="images/ST01.png" width="250">
+    </td>
+    <td align="center">
+      <img src="results/ST01_sketch_pencil.png" width="250">
+    </td>
+    <td align="center">
+      <img src="results/ST01_sketch_color.png" width="250">
+    </td>
+    <td align="center">
+      <img src="results/ST01_sketch_bilateral.png" width="250">
+    </td>
+  </tr>
+</table>
