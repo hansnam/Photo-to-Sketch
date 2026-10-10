@@ -1,6 +1,6 @@
-# PHẦN MỀM CHUYỂN ẢNH THÀNH TRANH VẼ TAY
+# PHẦN MỀM CHUYỂN ẢNH THÀNH TRANH VẼ
 
-Dự án cài đặt phần mềm chuyển đổi ảnh màu thành tranh vẽ tay nghệ thuật dựa trên các kỹ thuật xử lý ảnh trong miền không gian (Spatial Filtering)
+Dự án cài đặt phần mềm chuyển đổi ảnh màu thành tranh vẽ dựa trên các kỹ thuật xử lý ảnh trong miền không gian (Spatial Filtering)
 
 
 ---
@@ -12,14 +12,11 @@ Photo_to_Sketch/
 │   ├── filters.py        # Tích chập tách rời 1D, Gaussian Blur, Sobel, Bilateral Filter (NumPy thuần)
 │   └── sketch.py         # Color Dodge, Tranh chì kinh điển, Tranh chì màu, Technical Sketch
 ├── gui/
-│   └── app.py            # Giao diện đồ họa Tkinter (Tải/lưu ảnh, thanh trượt thời gian thực, xem tab)
-├── images/
-│   ├── natural/          # Ảnh tự nhiên (chân dung ST01.png, phong cảnh input.jpg)
-│   ├── medical/          # Ảnh y tế (phim X-quang phổi xray_chest.jpg)
-│   └── industrial/       # Ảnh công nghiệp (bản mạch vi điện tử pcb_board.jpg)
-├── results/              # Thư mục lưu trữ kết quả và các bước trung gian
-├── main.py               # Điểm khởi chạy phần mềm (hỗ trợ cả GUI và CLI batch)
-├── requirements.txt      # Thư viện yêu cầu (chỉ gồm numpy và pillow)
+│   └── app.py            # Giao diện đồ họa Tkinter
+├── images/               # Thư mục lưu trữ hình ảnh mẫu    
+├── results/              # Thư mục lưu trữ kết quả
+├── main.py               # Điểm khởi chạy phần mềm 
+├── requirements.txt      # Thư viện yêu cầu 
 └── README.md
 ```
 
@@ -79,9 +76,7 @@ Khởi động phần mềm với giao diện trực quan:
 python main.py
 ```
 * **Mở ảnh từ máy**: Hỗ trợ mọi định dạng (`.png`, `.jpg`, `.jpeg`, `.bmp`, `.tiff`).
-* **Chọn ảnh mẫu nghiệm thu**: Chọn nhanh các mẫu ảnh Y tế (X-quang), Công nghiệp (PCB), Tự nhiên.
-* **Xem các bước trung gian**: Có các Tab chuyển đổi trực quan (Ảnh gốc, Ảnh xám, Làm mịn, Biên Sobel, Tranh hoàn chỉnh).
-* **Điều chỉnh tham số thời gian thực**: Thay đổi $\sigma_s$, $\sigma_r$, độ đậm nét chì, độ tương phản qua thanh trượt mượt mà.
+* **Chọn ảnh mẫu nghiệm thu**: Chọn nhanh các mẫu ảnh Y tế (X-quang), Công nghiệp (PCB), Tự nhiên,...
 * **Lưu kết quả**: Xuất ảnh tranh vẽ chất lượng gốc cao nhất hoặc xuất trọn bộ 4 bước vào thư mục `results/`.
 
 ### 3.3. Chạy chế độ dòng lệnh tự động (Batch CLI)
